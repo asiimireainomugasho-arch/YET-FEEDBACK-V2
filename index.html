@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>YET Alumni Experience Report – February 2026</title>
+<style>
+:root{
+  --navy:#0D1E35;--navy2:#162840;--navy3:#1E3554;
+  --red:#A03434;--redl:#C04444;
+  --blue:#3E7FA0;--bluel:#5CA0C4;
+  --gold:#C8880A;--goldl:#E0A020;
+  --green:#3A7A52;--greenl:#4E9E6A;
+  --grey:#64748B;--greyl:#94A3B8;
+  --bg:#F4F7FA;--surface:#fff;
+  --border:#E0E8F0;--text:#0D1E35;--muted:#64748B;
+  --f:'Segoe UI','Inter',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--f);background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--navy);padding:0 28px;display:flex;align-items:center;gap:0;border-bottom:2px solid var(--navy3);overflow-x:auto}
+.nav-logo{display:flex;align-items:center;gap:10px;padding:12px 0;flex-shrink:0;margin-right:16px}
+.nav-badge{background:linear-gradient(135deg,var(--blue),var(--red));border-radius:5px;padding:3px 11px;color:#fff;font-weight:800;font-size:11px;letter-spacing:.06em}
+.nav-title{color:var(--greyl);font-size:11px;white-space:nowrap}
+.nav-links{display:flex;gap:2px;overflow-x:auto;padding:4px 0}
+.nav-links a{color:var(--greyl);font-size:11px;padding:6px 10px;border-radius:6px;text-decoration:none;white-space:nowrap;transition:all .15s}
+.nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,.1);color:#fff}
+.dl-all{margin-left:auto;background:linear-gradient(135deg,var(--blue),var(--green));border:none;border-radius:7px;padding:7px 14px;color:#fff;font-weight:700;font-size:11px;cursor:pointer;white-space:nowrap;flex-shrink:0}
+
+/* SECTIONS */
+section{max-width:1200px;margin:0 auto;padding:40px 28px 0}
+section:last-of-type{padding-bottom:60px}
+.sec-head{border-left:4px solid var(--accent,var(--red));padding-left:14px;margin-bottom:24px}
+.sec-head h2{font-size:22px;font-weight:800;color:var(--text);margin-bottom:3px}
+.sec-head p{color:var(--muted);font-size:13px}
+
+/* COVER */
+#cover{max-width:100%;padding:0;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,var(--navy3) 100%);position:relative;overflow:hidden;min-height:360px;display:flex;align-items:center;justify-content:center;text-align:center}
+#cover::before{content:"YET";position:absolute;right:-20px;bottom:-30px;font-size:200px;font-weight:900;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;letter-spacing:-8px}
+.cover-inner{padding:48px 32px;position:relative;z-index:1}
+.cover-badge{display:inline-block;background:linear-gradient(135deg,var(--blue),var(--red));border-radius:10px;padding:5px 18px;margin-bottom:16px;color:#fff;font-weight:800;font-size:12px;letter-spacing:.12em}
+.cover-inner h1{color:#fff;font-size:36px;font-weight:900;margin-bottom:8px;line-height:1.15}
+.cover-inner h2{color:var(--bluel);font-size:20px;font-weight:500;margin-bottom:8px}
+.cover-inner .sub{color:var(--greyl);font-size:13px;margin-bottom:5px}
+.cover-kpis{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:24px}
+.cover-kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 18px;min-width:100px;text-align:center}
+.cover-kpi .val{font-size:26px;font-weight:900;line-height:1}
+.cover-kpi .lbl{color:var(--greyl);font-size:10px;margin-top:4px;line-height:1.3}
+
+/* CARDS */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media(max-width:900px){.grid2,.grid3,.grid4,.grid5{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid2,.grid3,.grid4,.grid5{grid-template-columns:1fr}}
+
+/* STAT BOXES */
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
+.stat .val{font-size:28px;font-weight:900;line-height:1}
+.stat .lbl{color:var(--muted);font-size:11px;margin-top:4px;text-transform:uppercase;letter-spacing:.08em}
+.stat .sub{color:var(--greyl);font-size:11px;margin-top:2px}
+
+/* SCORECARD RINGS */
+.score-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.score-card .cat{font-weight:700;font-size:12px;color:var(--text);line-height:1.3}
+.score-card .resp{color:var(--muted);font-size:11px}
+.ring-wrap{position:relative;display:inline-flex}
+.ring-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px}
+.hbar-wrap{width:100%;background:#E5EAF0;border-radius:99px;height:8px;overflow:hidden;margin-top:3px}
+.hbar-fill{height:100%;border-radius:99px}
+.hbar-row{display:flex;justify-content:space-between;font-size:11px;margin-top:6px}
+
+/* EXEC BULLETS */
+.exec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.exec-item{border-left:3px solid var(--c);background:color-mix(in srgb,var(--c) 6%,white);border:1px solid color-mix(in srgb,var(--c) 18%,white);border-left:3px solid var(--c);border-radius:8px;padding:12px 14px}
+.exec-item .ei-title{font-weight:700;font-size:13px;color:var(--text);margin-bottom:4px;display:flex;align-items:center;gap:7px}
+.exec-item p{color:var(--muted);font-size:12px;line-height:1.65}
+
+/* THEME CARDS */
+.theme{border:1px solid var(--border);border-left:4px solid var(--tc);border-radius:10px;background:var(--surface);padding:18px;margin-bottom:14px}
+.theme-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.theme-icon{font-size:22px}
+.theme-title{font-weight:700;font-size:15px;color:var(--text);flex:1}
+.badge{display:inline-block;font-size:11px;font-weight:700;border-radius:99px;padding:2px 10px;white-space:nowrap}
+.summary{color:var(--muted);font-size:13px;line-height:1.7;margin-bottom:8px}
+.detail{color:var(--muted);font-size:12px;line-height:1.7;margin-bottom:10px;padding:10px 12px;background:#F8FAFC;border-radius:7px;border:1px solid var(--border)}
+.quotes{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.quote{background:#F8FAFC;border:1px solid var(--border);border-left:3px solid var(--tc);border-radius:0 6px 6px 0;padding:8px 12px;font-style:italic;font-size:12px;color:var(--text);line-height:1.6}
+.imp{background:color-mix(in srgb,var(--tc) 8%,white);border:1px solid color-mix(in srgb,var(--tc) 20%,white);border-radius:8px;padding:10px 13px;display:flex;gap:8px;align-items:flex-start}
+.imp-icon{font-size:15px;flex-shrink:0}
+.imp p{font-size:12px;line-height:1.6;margin:0}
+.imp strong{color:var(--tc)}
+
+/* RATING SIDEBAR */
+.rating-box{background:#F8FAFC;border:1px solid var(--border);border-radius:10px;padding:16px}
+.rating-box h4{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px;font-weight:600}
+
+/* RECS TABLE */
+.recs-table{width:100%;border-collapse:collapse;font-size:13px}
+.recs-table th{background:var(--navy);color:var(--greyl);padding:10px 12px;text-align:left;font-size:11px;font-weight:600;white-space:nowrap}
+.recs-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+.recs-table tr:nth-child(even) td{background:#F8FAFC}
+.recs-table tr:hover td{background:color-mix(in srgb,var(--blue) 4%,white)}
+.p-num{font-weight:900;font-size:20px;line-height:1}
+
+/* CALLOUT */
+.callout{border-radius:12px;padding:18px 22px;display:flex;align-items:center;gap:16px;margin-top:20px}
+.callout.dark{background:var(--navy);color:#fff}
+.callout.dark p{color:var(--greyl)}
+.callout .cval{font-size:36px;font-weight:900;line-height:1;flex-shrink:0}
+.callout h3{font-size:16px;font-weight:800;margin-bottom:4px}
+
+/* NEXT STEPS */
+.step{display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 14px;margin-bottom:8px}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#fff;flex-shrink:0}
+.step p{color:#fff;font-size:13px;line-height:1.5}
+
+/* CLOSING */
+#closing{max-width:100%;padding:0;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff}
+.closing-inner{max-width:1200px;margin:0 auto;padding:48px 28px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+@media(max-width:700px){.closing-inner{grid-template-columns:1fr}}
+
+/* SVG CHARTS */
+.chart-wrap{width:100%;overflow:hidden}
+
+/* PRINT */
+@media print{
+  nav,.dl-all,.dl-slide-btn{display:none!important}
+  section,#cover,#closing{page-break-after:always;padding:24px}
+  body{background:#fff}
+  .theme{page-break-inside:avoid}
+}
+
+/* SECTION DL BUTTON */
+.sec-actions{display:flex;justify-content:flex-end;margin-bottom:14px}
+.dl-slide-btn{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;color:var(--muted);display:flex;align-items:center;gap:6px;transition:all .15s}
+.dl-slide-btn:hover{border-color:var(--accent,var(--blue));color:var(--accent,var(--blue))}
+
+/* SEPARATOR */
+.sep{border:none;border-top:2px solid var(--border);margin:0 28px}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-badge">YET</div>
+    <span class="nav-title">Alumni Report · Feb 2026</span>
+  </div>
+  <div class="nav-links">
+    <a href="#cover">Cover</a>
+    <a href="#exec">Summary</a>
+    <a href="#profile">Profile</a>
+    <a href="#scorecard">Scorecard</a>
+    <a href="#recruitment">Recruitment</a>
+    <a href="#interview">Interview</a>
+    <a href="#postinterview">Post-Interview</a>
+    <a href="#training">Training</a>
+    <a href="#overall">Overall</a>
+    <a href="#recs">Recommendations</a>
+    <a href="#closing">Closing</a>
+  </div>
+  <button class="dl-all" onclick="dlAll()">⬇ Download Full Report</button>
+</nav>
+
+<!-- ─── COVER ──────────────────────────────────────────────────────── -->
+<div id="cover">
+  <div class="cover-inner">
+    <div class="cover-badge">EDUCATE! · YOUTH ENGAGEMENT TRAINING</div>
+    <h1>Alumni Experience Analysis</h1>
+    <h2>A Comprehensive Stakeholder Report</h2>
+    <p class="sub">Recruitment · Interview · Post-Interview Communication · Training Content · Overall Outcomes</p>
+    <p class="sub" style="margin-top:4px;font-size:12px">February 2026 &nbsp;·&nbsp; 48 YET Alumni Respondents &nbsp;·&nbsp; Cohorts 2019–2025 &nbsp;·&nbsp; All Quotes Anonymised</p>
+    <div class="cover-kpis">
+      <div class="cover-kpi"><div class="val" style="color:#5CA0C4">48</div><div class="lbl">Alumni Surveyed</div></div>
+      <div class="cover-kpi"><div class="val" style="color:#E0A020">75%</div><div class="lbl">Rated Excellent</div></div>
+      <div class="cover-kpi"><div class="val" style="color:#4E9E6A">100%</div><div class="lbl">Fully Prepared</div></div>
+      <div class="cover-kpi"><div class="val" style="color:#C04444">83%</div><div class="lbl">Training Relevant</div></div>
+      <div class="cover-kpi"><div class="val" style="color:#5CA0C4">52%</div><div class="lbl">Via Alumni Referral</div></div>
+      <div class="cover-kpi"><div class="val" style="color:#4E9E6A">5</div><div class="lbl">Cohorts Represented</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── EXEC SUMMARY ───────────────────────────────────────────────── -->
+<section id="exec" style="--accent:var(--red)">
+  <div class="sec-actions"><button class="dl-slide-btn" style="--accent:var(--red)" onclick="dlSection('exec','Executive Summary')">⬇ Download Section</button></div>
+  <div class="sec-head">
+    <h2>Executive Summary</h2>
+    <p>Six headline findings from 48 YET alumni · February 2026 · For stakeholder consideration</p>
+  </div>
+  <div class="exec-grid">
+    <div class="exec-item" style="--c:var(--green)">
+      <div class="ei-title"><span>✅</span>Universal Training Preparedness</div>
+      <p>100% of all 48 respondents — across every cohort and location — confirmed that YET training adequately prepared them for subsequent work. This is a near-unprecedented outcome for a programme of this scale and complexity, and deserves prominent placement in all donor and stakeholder communications.</p>
+    </div>
+    <div class="exec-item" style="--c:var(--blue)">
+      <div class="ei-title"><span>📡</span>YET Alumni: The #1 Recruitment Channel</div>
+      <p>25 of 48 respondents (52%) first heard about YET through existing alumni. This organic peer advocacy is YET's most powerful and cost-effective recruitment engine — and it is currently entirely unstructured, meaning significant untapped potential remains.</p>
+    </div>
+    <div class="exec-item" style="--c:var(--red)">
+      <div class="ei-title"><span>🔥</span>Test of Fire: The Defining Transformative Moment</div>
+      <p>Across all 5 cohorts, the Test of Fire — live facilitation to real youth audiences — was the single most cited transformational experience. Its impact is undisputed; however, its logistical support and preparation time require meaningful improvement in future iterations.</p>
+    </div>
+    <div class="exec-item" style="--c:var(--gold)">
+      <div class="ei-title"><span>🚌</span>Transport: The Primary Equity Barrier</div>
+      <p>26 of 48 alumni cited daily commuting costs as their biggest personal challenge. The non-residential format creates a structural socioeconomic barrier that affects participation quality disproportionately for alumni from peri-urban and rural backgrounds.</p>
+    </div>
+    <div class="exec-item" style="--c:var(--grey)">
+      <div class="ei-title"><span>📋</span>Information Gaps Create Misaligned Expectations</div>
+      <p>While 73% found recruitment information very clear, critical gaps remain around retention criteria, post-YET career pathways, and logistical requirements — generating anxiety and misaligned expectations that colour the training experience before it even begins.</p>
+    </div>
+    <div class="exec-item" style="--c:var(--blue)">
+      <div class="ei-title"><span>🏡</span>Residential Format: The #1 Structural Request</div>
+      <p>Across every cohort surveyed, transitioning to a residential or hybrid-residential model was the most frequently and most passionately requested structural improvement — seen not as a luxury, but as a prerequisite for equitable access to the full YET experience.</p>
+    </div>
+  </div>
+  <div class="callout dark" style="margin-top:20px">
+    <span style="font-size:28px">💡</span>
+    <div>
+      <h3 style="color:#fff">Stakeholder Bottom Line</h3>
+      <p>YET is delivering measurable, transformational outcomes — particularly in facilitation confidence and professional network-building. The strategic priority for the next iteration is addressing structural barriers: transport costs, residential access, and pre-training information quality. These are solvable problems with significant return on investment.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="sep" style="margin-top:40px"/>
+
+<!-- ─── RESPONDENT PROFILE ─────────────────────────────────────────── -->
+<section id="profile" style="--accent:var(--blue)">
+  <div class="sec-actions"><button class="dl-slide-btn" onclick="dlSection('profile','Respondent Profile')">⬇ Download Section</button></div>
+  <div class="sec-head">
+    <h2>Who Responded: Alumni Profile &amp; Context</h2>
+    <p>48 YET alumni across 5 cohorts spanning 2019–2025 · Survey conducted February 2026</p>
+  </div>
+  <div class="grid2" style="margin-bottom:18px">
+    <!-- cohort chart -->
+    <div class="card">
+      <h3 style="font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;margin-bottom:14px">Respondents by Cohort Year</h3>
+      <svg viewBox="0 0 380 180" width="100%" style="overflow:visible">
+        <!-- grid lines -->
+        <line x1="40" y1="20" x2="380" y2="20" stroke="#E0E8F0" stroke-dasharray="4"/>
+        <line x1="40" y1="60" x2="380" y2="60" stroke="#E0E8F0" stroke-dasharray="4"/>
+        <line x1="40" y1="100" x2="380" y2="100" stroke="#E0E8F0" stroke-dasharray="4"/>
+        <line x1="40" y1="140" x2="380" y2="140" stroke="#E0E8F0" stroke-dasharray="4"/>
+        <!-- y axis labels -->
+        <text x="35" y="23" text-anchor="end" fill="#94A3B8" font-size="10">20</text>
+        <text x="35" y="63" text-anchor="end" fill="#94A3B8" font-size="10">15</text>
+        <text x="35" y="103" text-anchor="end" fill="#94A3B8" font-size="10">10</text>
+        <text x="35" y="143" text-anchor="end" fill="#94A3B8" font-size="10">5</text>
+        <!-- bars: max=21, scale: 140px = 21 items -->
+        <!-- 2019: n=2 -->
+        <rect x="58" y="127" width="38" height="13" fill="#64748B" rx="4"/>
+        <text x="77" y="120" text-anchor="middle" fill="#0D1E35" font-size="12" font-weight="800">2</text>
+        <text x="77" y="165" text-anchor="middle" fill="#64748B" font-size="11">2019</text>
+        <!-- 2022: n=1 -->
+        <rect x="118" y="133" width="38" height="7" fill="#94A3B8" rx="4"/>
+        <text x="137" y="126" text-anchor="middle" fill="#0D1E35" font-size="12" font-weight="800">1</text>
+        <text x="137" y="165" text-anchor="middle" fill="#64748B" font-size="11">2022</text>
+        <!-- 2023: n=5 -->
+        <rect x="178" y="107" width="38" height="33" fill="#3E7FA0" rx="4"/>
+        <text x="197" y="100" text-anchor="middle" fill="#0D1E35" font-size="12" font-weight="800">5</text>
+        <text x="197" y="165" text-anchor="middle" fill="#64748B" font-size="11">2023</text>
+        <!-- 2024: n=21 -->
+        <rect x="238" y="20" width="38" height="120" fill="#C8880A" rx="4"/>
+        <text x="257" y="13" text-anchor="middle" fill="#0D1E35" font-size="12" font-weight="800">21</text>
+        <text x="257" y="165" text-anchor="middle" fill="#64748B" font-size="11">2024</text>
+        <!-- 2025: n=19 -->
+        <rect x="298" y="29" width="38" height="111" fill="#A03434" rx="4"/>
+        <text x="317" y="22" text-anchor="middle" fill="#0D1E35" font-size="12" font-weight="800">19</text>
+        <text x="317" y="165" text-anchor="middle" fill="#64748B" font-size="11">2025</text>
+      </svg>
+      <div class="grid3" style="margin-top:12px;gap:8px">
+        <div class="stat" style="padding:10px"><div class="val" style="font-size:18px;color:var(--gold)">2024+2025</div><div class="lbl">Largest Cohorts (83%)</div></div>
+        <div class="stat" style="padding:10px"><div class="val" style="font-size:18px;color:var(--blue)">5</div><div class="lbl">Total Cohorts</div></div>
+        <div class="stat" style="padding:10px"><div class="val" style="font-size:18px;color:var(--green)">6 yrs</div><div class="lbl">Span: 2019–2025</div></div>
+      </div>
+    </div>
+    <!-- heard chart -->
+    <div class="card">
+      <h3 style="font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;margin-bottom:14px">How Alumni First Heard About YET</h3>
+      <svg viewBox="0 0 360 200" width="100%" style="overflow:visible">
+        <!-- Newspaper: 1 -->
+        <text x="98" y="22" text-anchor="end" fill="#0D1E35" font-size="11">Newspaper</text>
+        <rect x="102" y="10" width="5" height="16" fill="#64748B" rx="2"/>
+        <text x="112" y="22" fill="#0D1E35" font-size="11" font-weight="700">1</text>
+        <!-- Radio: 1 -->
+        <text x="98" y="52" text-anchor="end" fill="#0D1E35" font-size="11">Radio</text>
+        <rect x="102" y="40" width="5" height="16" fill="#64748B" rx="2"/>
+        <text x="112" y="52" fill="#0D1E35" font-size="11" font-weight="700">1</text>
+        <!-- University: 1 -->
+        <text x="98" y="82" text-anchor="end" fill="#0D1E35" font-size="11">University</text>
+        <rect x="102" y="70" width="5" height="16" fill="#94A3B8" rx="2"/>
+        <text x="112" y="82" fill="#0D1E35" font-size="11" font-weight="700">1</text>
+        <!-- Friend: 5 -->
+        <text x="98" y="112" text-anchor="end" fill="#0D1E35" font-size="11">Friend</text>
+        <rect x="102" y="100" width="25" height="16" fill="#3E7FA0" rx="2"/>
+        <text x="132" y="112" fill="#0D1E35" font-size="11" font-weight="700">5</text>
+        <!-- Social Media: 15 -->
+        <text x="98" y="142" text-anchor="end" fill="#0D1E35" font-size="11">Social Media</text>
+        <rect x="102" y="130" width="75" height="16" fill="#C8880A" rx="2"/>
+        <text x="182" y="142" fill="#0D1E35" font-size="11" font-weight="700">15</text>
+        <!-- YET Alumni: 25 -->
+        <text x="98" y="172" text-anchor="end" fill="#0D1E35" font-size="11" font-weight="700">YET Alumni</text>
+        <rect x="102" y="160" width="125" height="16" fill="#A03434" rx="2"/>
+        <text x="232" y="172" fill="#0D1E35" font-size="11" font-weight="800">25 🌟</text>
+      </svg>
+      <div style="background:color-mix(in srgb,var(--red) 8%,white);border:1px solid color-mix(in srgb,var(--red) 22%,white);border-radius:8px;padding:12px 14px;margin-top:4px">
+        <p style="color:var(--red);font-weight:700;font-size:13px;margin-bottom:4px">🌟 YET Alumni are the #1 Referral Channel — 52% of all respondents</p>
+        <p style="color:var(--muted);font-size:12px;line-height:1.65">This organic peer advocacy is YET's most powerful and most cost-effective recruitment channel. A structured alumni referral programme could systematically amplify this with minimal investment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep" style="margin-top:40px"/>
+
+<!-- ─── QUANTITATIVE SCORECARD ─────────────────────────────────────── -->
+<section id="scorecard" style="--accent:var(--gold)">
+  <div class="sec-actions"><button class="dl-slide-btn" onclick="dlSection('scorecard','Quantitative Scorecard')">⬇ Download Section</button></div>
+  <div class="sec-head">
+    <h2>Quantitative Scorecard: Ratings Across 5 Key Dimensions</h2>
+    <p>All 48 respondents rated each dimension · Scores represent % selecting the top response category</p>
+  </div>
+  <div class="grid5" style="margin-bottom:20px">
+
+    <!-- Recruitment Clarity -->
+    <div class="score-card">
+      <svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#3A7A5225" stroke-width="13"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#3A7A52" stroke-width="13"
+          stroke-dasharray="173 238" stroke-dashoffset="60" stroke-linecap="round"/>
+        <text x="50" y="55" text-anchor="middle" fill="#3A7A52" font-size="20" font-weight="900" font-family="Segoe UI,Arial">73%</text>
+      </svg>
+      <div class="cat">Recruitment Clarity</div>
+      <div style="width:100%">
+        <div class="hbar-row"><span>Very Clear</span><span style="color:var(--green);font-weight:700">73%</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:73%;background:var(--green)"></div></div>
+        <div class="hbar-row" style="margin-top:6px"><span style="color:var(--greyl)">Somewhat Clear</span><span style="color:var(--greyl);font-weight:700">27%</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:27%;background:var(--greyl)"></div></div>
+      </div>
+      <div class="resp">35 of 48 selected "Very Clear"</div>
+    </div>
+
+    <!-- Interview Experience -->
+    <div class="score-card">
+      <svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#3E7FA025" stroke-width="13"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#3E7FA0" stroke-width="13"
+          stroke-dasharray="154 238" stroke-dashoffset="60" stroke-linecap="round"/>
+        <text x="50" y="55" text-anchor="middle" fill="#3E7FA0" font-size="20" font-weight="900" font-family="Segoe UI,Arial">65%</text>
+      </svg>
+      <div class="cat">Interview Experience</div>
+      <div style="width:100%">
+        <div class="hbar-row"><span>Very Good</span><span style="color:var(--blue);font-weight:700">65%</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:65%;background:var(--blue)"></div></div>
+        <div class="hbar-row" style="margin-top:6px"><span style="color:var(--greyl)">Good</span><span style="color:var(--greyl);font-weight:700">35%</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:35%;background:var(--greyl)"></div></div>
+      </div>
+      <div class="resp">31 of 48 selected "Very Good"</div>
+    </div>
+
+    <!-- Post-Interview -->
+    <div class="score-card">
+      <svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#C8880A25" stroke-width="13"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#C8880A" stroke-width="13"
+          stroke-dasharray="133 238" stroke-dashoffset="60" stroke-linecap="round"/>
+        <text x="50" y="55" text-anchor="middle" fill="#C8880A" font-size="20" font-weight="900" font-family="Segoe UI,Arial">56%</text>
+      </svg>
+      <div class="cat">Post-Interview Comm.</div>
+      <div style="width:100%">
+        <div class="hbar-row"><span>Very Satisfied</span><span style="color:var(--gold);font-weight:700">56%</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:56%;background:var(--gold)"></div></div>
+        <div class="hbar-row" style="margin-top:6px"><span style="color:var(--greyl)">Satisfied</span><span style="color:var(--greyl);font-weight:700">38%</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:38%;background:var(--greyl)"></div></div>
+      </div>
+      <div class="resp">27 of 48 "Very Satisfied" · 6% Neutral</div>
+    </div>
+
+    <!-- Training Relevance -->
+    <div class="score-card">
+      <svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#A0343425" stroke-width="13"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#A03434" stroke-width="13"
+          stroke-dasharray="198 238" stroke-dashoffset="60" stroke-linecap="round"/>
+        <text x="50" y="55" text-anchor="middle" fill="#A03434" font-size="20" font-weight="900" font-family="Segoe UI,Arial">83%</text>
+      </svg>
+      <div class="cat">Training Relevance</div>
+      <div style="width:100%">
+        <div class="hbar-row"><span>Very Relevant</span><span style="color:var(--red);font-weight:700">83%</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:83%;background:var(--red)"></div></div>
+        <div class="hbar-row" style="margin-top:6px"><span style="color:var(--greyl)">Relevant</span><span style="color:var(--greyl);font-weight:700">17%</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:17%;background:var(--greyl)"></div></div>
+      </div>
+      <div class="resp">40 of 48 selected "Very Relevant"</div>
+    </div>
+
+    <!-- Overall Experience -->
+    <div class="score-card">
+      <svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#3E7FA025" stroke-width="13"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#3E7FA0" stroke-width="13"
+          stroke-dasharray="178 238" stroke-dashoffset="60" stroke-linecap="round"/>
+        <text x="50" y="55" text-anchor="middle" fill="#3E7FA0" font-size="20" font-weight="900" font-family="Segoe UI,Arial">75%</text>
+      </svg>
+      <div class="cat">Overall Experience</div>
+      <div style="width:100%">
+        <div class="hbar-row"><span>Excellent</span><span style="color:var(--blue);font-weight:700">75%</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:75%;background:var(--blue)"></div></div>
+        <div class="hbar-row" style="margin-top:6px"><span style="color:var(--greyl)">Good</span><span style="color:var(--greyl);font-weight:700">25%</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:25%;background:var(--greyl)"></div></div>
+      </div>
+      <div class="resp">36 of 48 selected "Excellent"</div>
+    </div>
+
+  </div>
+  <div class="callout dark">
+    <div style="background:rgba(58,122,82,.25);border:2px solid rgba(58,122,82,.6);border-radius:50%;width:72px;height:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0">
+      <span style="color:#4E9E6A;font-weight:900;font-size:22px;line-height:1">100%</span>
+      <span style="color:var(--greyl);font-size:9px">Prepared</span>
+    </div>
+    <div>
+      <h3 style="color:#fff;font-size:17px;margin-bottom:5px">Every Single Respondent Confirmed: Training Adequately Prepared Them</h3>
+      <p>This unanimous affirmation spans all 5 cohorts and all geographic locations. Despite daily transport challenges, financial strain, and logistical barriers — not one of the 48 respondents reported feeling unprepared for the work that followed. This is a rare and powerful indicator of programme quality that deserves prominent placement in all stakeholder and donor communications.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="sep" style="margin-top:40px"/>
+
+<!-- ─── RECRUITMENT ────────────────────────────────────────────────── -->
+<section id="recruitment" style="--accent:var(--green)">
+  <div class="sec-actions"><button class="dl-slide-btn" onclick="dlSection('recruitment','Recruitment Findings')">⬇ Download Section</button></div>
+  <div class="sec-head">
+    <h2>Recruitment &amp; Information Clarity</h2>
+    <p>3 insight themes identified · Synthesised from open-text responses · All quotes anonymised</p>
+  </div>
+  <div class="grid2">
+    <div>
+
+      <div class="theme" style="--tc:var(--red)">
+        <div class="theme-head">
+          <span class="theme-icon">❓</span>
+          <span class="theme-title">Retention &amp; Employment Ambiguity</span>
+          <span class="badge" style="background:color-mix(in srgb,var(--red) 15%,white);color:var(--red)">18 mentions</span>
+        </div>
+        <p class="summary">Many alumni entered YET without understanding that retention at Educate! is merit-based, competitive, and not guaranteed. This created anxiety during training and frustration post-programme, as expectations were unmet.</p>
+        <div class="detail">Alumni repeatedly described hearing about retention opportunities only through rumour or informal channels. The absence of transparent, upfront communication about criteria, numbers retained, and the decision timeline meant many trained with an implicit assumption of employment that was never formally offered.</div>
+        <div class="quotes">
+          <div class="quote">"Making it clear that the job doesn't come automatically — it takes time and is on merit."</div>
+          <div class="quote">"I only heard through rumors that the best youth are retained as trainers. It wasn't clearly communicated."</div>
+          <div class="quote">"The numbers who will be retained and how a participant knows they are doing well should be shared."</div>
+        </div>
+        <div class="imp">
+          <span class="imp-icon">💡</span>
+          <p><strong>Implication:</strong> Standardise a pre-training information document that explicitly addresses: (1) retention criteria, (2) the proportion typically retained per cohort, (3) timeline for retention decisions, and (4) what success during YET looks like in assessable terms.</p>
+        </div>
+      </div>
+
+      <div class="theme" style="--tc:var(--gold)">
+        <div class="theme-head">
+          <span class="theme-icon">🗺️</span>
+          <span class="theme-title">Post-YET Pathways Insufficiently Articulated</span>
+          <span class="badge" style="background:color-mix(in srgb,var(--gold) 15%,white);color:var(--gold)">12 mentions</span>
+        </div>
+        <p class="summary">Alumni wanted clearer articulation of the career pathways, certifications, and transferable skills gained — especially how YET connects to future employment, further study, or entrepreneurship opportunities.</p>
+        <div class="detail">Recruitment messaging focused primarily on values and mission alignment rather than the concrete, individual benefits of participation. Alumni who enrolled expecting immediate startup capital or business skills felt the programme's emphasis on mindset and facilitation was misaligned with what was communicated at recruitment.</div>
+        <div class="quotes">
+          <div class="quote">"The main goal of Educate! was not well explained."</div>
+          <div class="quote">"The program emphasizes mindset over immediate startup tools, which felt mismatched during recruitment."</div>
+          <div class="quote">"Post-training obligations and opportunities needed more clarity from the beginning."</div>
+        </div>
+        <div class="imp">
+          <span class="imp-icon">💡</span>
+          <p><strong>Implication:</strong> Create a YET Graduate Value Proposition one-pager covering: skills earned, facilitation certification, and career options alumni can pursue — employment, freelance facilitation, alumni networks, further training pathways.</p>
+        </div>
+      </div>
+
+      <div class="theme" style="--tc:var(--blue)">
+        <div class="theme-head">
+          <span class="theme-icon">📋</span>
+          <span class="theme-title">Logistical Details Not Communicated in Advance</span>
+          <span class="badge" style="background:color-mix(in srgb,var(--blue) 15%,white);color:var(--blue)">9 mentions</span>
+        </div>
+        <p class="summary">Key logistical facts — accommodation arrangements, venue location, programme intensity, transport requirements, and the non-residential nature of training — were surprises for multiple alumni that affected their planning and performance.</p>
+        <div class="detail">Several alumni arrived unprepared for the physical and financial demands of daily commuting. Others were caught off guard by requirements like the UGX 50,000 contribution, the need to arrange their own accommodation, or the expectation to mobilise youth independently for the Test of Fire.</div>
+        <div class="quotes">
+          <div class="quote">"Accommodation preparations for proper planning — we needed to know earlier."</div>
+          <div class="quote">"Information around the 50k requirements and the intensity of it all would have been helpful upfront."</div>
+          <div class="quote">"The training period, certificate issuance, and non-residential nature were not communicated in advance."</div>
+        </div>
+        <div class="imp">
+          <span class="imp-icon">💡</span>
+          <p><strong>Implication:</strong> Issue a detailed Logistics Brief at least 3 weeks before training commences, covering: venue location and transport routes, daily schedule and intensity expectations, any financial contributions required, accommodation options, and Test of Fire preparation requirements.</p>
+        </div>
+      </div>
+
+    </div>
+    <div>
+      <div class="rating-box" style="margin-bottom:14px">
+        <h4>Recruitment Clarity Rating</h4>
+        <div style="text-align:center;margin-bottom:12px">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#3A7A5225" stroke-width="13"/>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#3A7A52" stroke-width="13"
+              stroke-dasharray="173 238" stroke-dashoffset="60" stroke-linecap="round"/>
+            <text x="50" y="55" text-anchor="middle" fill="#3A7A52" font-size="20" font-weight="900" font-family="Segoe UI,Arial">73%</text>
+          </svg>
+        </div>
+        <div class="hbar-row"><span>Very Clear</span><span style="color:var(--green);font-weight:700">73% (35)</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:73%;background:var(--green)"></div></div>
+        <div class="hbar-row" style="margin-top:8px"><span style="color:var(--greyl)">Somewhat Clear</span><span style="color:var(--greyl);font-weight:700">27% (13)</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:27%;background:var(--greyl)"></div></div>
+      </div>
+      <div class="card">
+        <h4 style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;margin-bottom:12px">Theme Index</h4>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px">
+          <div style="width:8px;height:8px;border-radius:2px;background:var(--red);flex-shrink:0;margin-top:4px"></div>
+          <div style="flex:1;font-size:13px">Retention &amp; Employment Ambiguity</div>
+          <div style="color:var(--red);font-weight:700;font-size:13px">18</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px">
+          <div style="width:8px;height:8px;border-radius:2px;background:var(--gold);flex-shrink:0;margin-top:4px"></div>
+          <div style="flex:1;font-size:13px">Post-YET Pathways</div>
+          <div style="color:var(--gold);font-weight:700;font-size:13px">12</div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:8px">
+          <div style="width:8px;height:8px;border-radius:2px;background:var(--blue);flex-shrink:0;margin-top:4px"></div>
+          <div style="flex:1;font-size:13px">Logistical Details Not Communicated</div>
+          <div style="color:var(--blue);font-weight:700;font-size:13px">9</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep" style="margin-top:40px"/>
+
+<!-- ─── INTERVIEW ──────────────────────────────────────────────────── -->
+<section id="interview" style="--accent:var(--blue)">
+  <div class="sec-actions"><button class="dl-slide-btn" onclick="dlSection('interview','Interview Experience')">⬇ Download Section</button></div>
+  <div class="sec-head">
+    <h2>Interview Experience</h2>
+    <p>3 insight themes identified · Synthesised from open-text responses · All quotes anonymised</p>
+  </div>
+  <div class="grid2">
+    <div>
+      <div class="theme" style="--tc:var(--green)">
+        <div class="theme-head">
+          <span class="theme-icon">⭐</span>
+          <span class="theme-title">Practical &amp; Interactive Format: Highly Valued</span>
+          <span class="badge" style="background:color-mix(in srgb,var(--green) 15%,white);color:var(--green)">28 mentions</span>
+        </div>
+        <p class="summary">Alumni strongly praised the hands-on, conversational nature of the interview process. Mock selling exercises, idea pitching, and one-on-one panel formats made the experience feel human, relevant, and energising rather than intimidating.</p>
+        <div class="detail">Unlike traditional interviews, the YET process placed candidates in real facilitation and entrepreneurship scenarios — asking them to sell products to panelists, pitch business ideas, and demonstrate communication skills in live settings. This format was described as a highlight, reflecting the spirit of YET itself.</div>
+        <div class="quotes">
+          <div class="quote">"I just loved how interactive the whole session was — so relieving."</div>
+          <div class="quote">"I was tasked to sell a product to the panelists — I loved it."</div>
+          <div class="quote">"Being asked if I had a business idea was eye-opening."</div>
+          <div class="quote">"The one-on-one format with a recruitment team member was the best part."</div>
+        </div>
+        <div class="imp">
+          <span class="imp-icon">💡</span>
+          <p><strong>Implication:</strong> Formally document and protect the practical, experiential interview format as a YET standard operating procedure to prevent drift toward conventional interview approaches across cohorts and locations.</p>
+        </div>
+      </div>
+      <div class="theme" style="--tc:var(--red)">
+        <div class="theme-head">
+          <span class="theme-icon">📍</span>
+          <span class="theme-title">Venue Accessibility Creates Participation Barriers</span>
+          <span class="badge" style="background:color-mix(in srgb,var(--red) 15%,white);color:var(--red)">14 mentions</span>
+        </div>
+        <p class="summary">Interview venues were too far from many candidates, requiring costly, tiring, and sometimes multi-hour travel — creating a socioeconomic barrier that may have excluded candidates from peri-urban and rural areas before they even entered the room.</p>
+        <div class="detail">Multiple alumni described travelling from districts such as Bugiri, Iganga, and surrounding areas to reach interview venues in Jinja. The process of obtaining supporting documents such as LC letters also added administrative burden disproportionately affecting those furthest from urban centres.</div>
+        <div class="quotes">
+          <div class="quote">"Interview venues should be in areas central to most people."</div>
+          <div class="quote">"Getting the LC letter was a hustle — the national ID is a clear indication of residence."</div>
+          <div class="quote">"Virtual interviews for candidates who are far should be considered."</div>
+        </div>
+        <div class="imp">
+          <span class="imp-icon">💡</span>
+          <p><strong>Implication:</strong> (1) Pilot hybrid virtual interviews for candidates located more than 40km from the nearest venue. (2) Prioritise centrally located physical venues accessible by public transport. (3) Review documentation requirements for accessibility.</p>
+        </div>
+      </div>
+      <div class="theme" style="--tc:var(--gold)">
+        <div class="theme-head">
+          <span class="theme-icon">⏱️</span>
+          <span class="theme-title">Interview-to-Training Timeline Too Compressed</span>
+          <span class="badge" style="background:color-mix(in srgb,var(--gold) 15%,white);color:var(--gold)">10 mentions</span>
+        </div>
+        <p class="summary">The window between receiving a selection notification and commencing training was far too short — sometimes as little as one week — leaving candidates insufficient time to arrange finances, inform employers or families, and prepare mentally and logistically.</p>
+        <div class="detail">This compression was especially difficult for candidates who needed to relocate, arrange childcare, request leave from employment, or save transport funds. Several described arriving at training stressed and under-resourced as a direct result of the tight timeline.</div>
+        <div class="quotes">
+          <div class="quote">"Timelines were too fixed. We had interviews this week and next week were required to relocate."</div>
+          <div class="quote">"After the decision I needed more time to prepare financially."</div>
+          <div class="quote">"The time between selection and training start was too tight — it affected how ready I felt."</div>
+        </div>
+        <div class="imp">
+          <span class="imp-icon">💡</span>
+          <p><strong>Implication:</strong> Establish a minimum mandatory gap of 14 days between interview decision notification and training commencement. Build this into the programme calendar as a non-negotiable operational standard.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="rating-box" style="margin-bottom:14px">
+        <h4>Interview Experience Rating</h4>
+        <div style="text-align:center;margin-bottom:12px">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#3E7FA025" stroke-width="13"/>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#3E7FA0" stroke-width="13"
+              stroke-dasharray="154 238" stroke-dashoffset="60" stroke-linecap="round"/>
+            <text x="50" y="55" text-anchor="middle" fill="#3E7FA0" font-size="20" font-weight="900" font-family="Segoe UI,Arial">65%</text>
+          </svg>
+        </div>
+        <div class="hbar-row"><span>Very Good</span><span style="color:var(--blue);font-weight:700">65% (31)</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:65%;background:var(--blue)"></div></div>
+        <div class="hbar-row" style="margin-top:8px"><span style="color:var(--greyl)">Good</span><span style="color:var(--greyl);font-weight:700">35% (17)</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:35%;background:var(--greyl)"></div></div>
+      </div>
+      <div class="card">
+        <h4 style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;margin-bottom:12px">Theme Index</h4>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px"><div style="width:8px;height:8px;border-radius:2px;background:var(--green);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:13px">Practical &amp; Interactive Format</div><div style="color:var(--green);font-weight:700">28</div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px"><div style="width:8px;height:8px;border-radius:2px;background:var(--red);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:13px">Venue Accessibility Barriers</div><div style="color:var(--red);font-weight:700">14</div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px"><div style="width:8px;height:8px;border-radius:2px;background:var(--gold);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:13px">Timeline Too Compressed</div><div style="color:var(--gold);font-weight:700">10</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep" style="margin-top:40px"/>
+
+<!-- ─── POST-INTERVIEW ─────────────────────────────────────────────── -->
+<section id="postinterview" style="--accent:var(--gold)">
+  <div class="sec-actions"><button class="dl-slide-btn" onclick="dlSection('postinterview','Post-Interview Communication')">⬇ Download Section</button></div>
+  <div class="sec-head">
+    <h2>Post-Interview Communication</h2>
+    <p>2 insight themes identified · Synthesised from open-text responses · All quotes anonymised</p>
+  </div>
+  <div class="grid2">
+    <div>
+      <div class="theme" style="--tc:var(--green)">
+        <div class="theme-head">
+          <span class="theme-icon">✅</span>
+          <span class="theme-title">Multi-Channel Communication: A Proven Strength</span>
+          <span class="badge" style="background:color-mix(in srgb,var(--green) 15%,white);color:var(--green)">25 mentions</span>
+        </div>
+        <p class="summary">Alumni widely praised the post-selection communication approach — combining email confirmations, direct phone calls from Programme Officers, and WhatsApp group onboarding. This multi-channel model reduced anxiety, built excitement, and ensured information reached everyone.</p>
+        <div class="detail">The combination of a formal email (providing documented reference), a personal phone call (building relationship and allowing Q&amp;A), and a WhatsApp group (facilitating peer connection before training began) was described as thorough, warm, and professional. Several alumni noted this early communication set a positive tone for the entire training experience.</div>
+        <div class="quotes">
+          <div class="quote">"I received feedback in time — they used both emails and calling, plus follow-ups."</div>
+          <div class="quote">"An email was sent accompanied by a phone call. All questions were answered."</div>
+          <div class="quote">"A direct call from one of the Program Officers, plus a follow-up email."</div>
+          <div class="quote">"I was sent an email to join a WhatsApp group where everything was communicated."</div>
+        </div>
+        <div class="imp">
+          <span class="imp-icon">💡</span>
+          <p><strong>Implication:</strong> (1) Formally document the multi-channel communication sequence as an SOP: email → phone call within 48hrs → WhatsApp group onboarding. (2) Train all recruitment staff on this sequence. (3) Establish a standard response time commitment — all queries responded to within 24 hours.</p>
+        </div>
+      </div>
+      <div class="theme" style="--tc:var(--gold)">
+        <div class="theme-head">
+          <span class="theme-icon">🤝</span>
+          <span class="theme-title">Unsuccessful Candidates Deserve Greater Dignity</span>
+          <span class="badge" style="background:color-mix(in srgb,var(--gold) 15%,white);color:var(--gold)">5 mentions</span>
+        </div>
+        <p class="summary">Candidates who were not selected reported receiving insufficient feedback, unclear notification timelines, and in some cases no formal communication at all. This represents both a missed opportunity and a reputational risk for YET and Educate!</p>
+        <div class="detail">While the volume of applicants makes individualised feedback challenging, the complete absence of structured rejection communication was described as demoralising and inconsistent with YET's stated values of dignity and empowerment. Some alumni only learned they were unsuccessful through informal channels.</div>
+        <div class="quotes">
+          <div class="quote">"To those that weren't considered, better can be done to align expectations."</div>
+          <div class="quote">"The timelines made me feel uncertain about the process."</div>
+          <div class="quote">"I needed more clarity on outcomes — I heard nothing official."</div>
+        </div>
+        <div class="imp">
+          <span class="imp-icon">💡</span>
+          <p><strong>Implication:</strong> (1) Develop a compassionate, standardised rejection template that acknowledges effort, provides brief constructive reasoning, and encourages reapplication. (2) Commit to notifying all unsuccessful candidates within 5 business days of selection decisions being finalised.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="rating-box" style="margin-bottom:14px">
+        <h4>Post-Interview Communication Rating</h4>
+        <div style="text-align:center;margin-bottom:12px">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#C8880A25" stroke-width="13"/>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#C8880A" stroke-width="13"
+              stroke-dasharray="133 238" stroke-dashoffset="60" stroke-linecap="round"/>
+            <text x="50" y="55" text-anchor="middle" fill="#C8880A" font-size="20" font-weight="900" font-family="Segoe UI,Arial">56%</text>
+          </svg>
+        </div>
+        <div class="hbar-row"><span>Very Satisfied</span><span style="color:var(--gold);font-weight:700">56% (27)</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:56%;background:var(--gold)"></div></div>
+        <div class="hbar-row" style="margin-top:8px"><span style="color:var(--greyl)">Satisfied</span><span style="color:var(--greyl);font-weight:700">38% (18)</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:38%;background:var(--greyl)"></div></div>
+        <div class="hbar-row" style="margin-top:8px"><span style="color:var(--greyl)">Neutral</span><span style="color:var(--greyl);font-weight:700">6% (3)</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:6%;background:#CBD5E1"></div></div>
+      </div>
+      <div class="card">
+        <h4 style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;margin-bottom:12px">Theme Index</h4>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px"><div style="width:8px;height:8px;border-radius:2px;background:var(--green);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:13px">Multi-Channel Communication Strength</div><div style="color:var(--green);font-weight:700">25</div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px"><div style="width:8px;height:8px;border-radius:2px;background:var(--gold);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:13px">Dignity for Unsuccessful Candidates</div><div style="color:var(--gold);font-weight:700">5</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep" style="margin-top:40px"/>
+
+<!-- ─── TRAINING ───────────────────────────────────────────────────── -->
+<section id="training" style="--accent:var(--red)">
+  <div class="sec-actions"><button class="dl-slide-btn" onclick="dlSection('training','Training Content and Delivery')">⬇ Download Section</button></div>
+  <div class="sec-head">
+    <h2>Training Content &amp; Delivery</h2>
+    <p>5 insight themes identified · Synthesised from open-text responses · All quotes anonymised</p>
+  </div>
+  <div class="grid2">
+    <div>
+      <div class="theme" style="--tc:var(--red)">
+        <div class="theme-head"><span class="theme-icon">🔥</span><span class="theme-title">Test of Fire: The Signature Capstone Experience</span><span class="badge" style="background:color-mix(in srgb,var(--red) 15%,white);color:var(--red)">29 mentions</span></div>
+        <p class="summary">The Test of Fire — where YETs independently design and facilitate a real session to live youth audiences — was simultaneously the most celebrated and most logistically challenged element. Alumni described it as transformational but under-resourced.</p>
+        <div class="detail">Alumni universally agreed that the Test of Fire represented the zenith of their YET experience — the moment theory became practice and confidence became real. However, preparation time was widely reported as insufficient, and the expectation to independently mobilise youth participants without transport support placed an unfair burden on trainees.</div>
+        <div class="quotes">
+          <div class="quote">"Test of Fire gave me confidence to design and facilitate to real participants. Irreplaceable."</div>
+          <div class="quote">"The test of fire was amazing — I applied event management skills during E!BA bootcamp 2025."</div>
+          <div class="quote">"Mobilizing youths without transport facilitation was a hard nut to crack."</div>
+          <div class="quote">"Test of fire preparation time could be increased — we needed at least 2 more days."</div>
+        </div>
+        <div class="imp"><span class="imp-icon">💡</span><p><strong>Implication:</strong> (1) Retain Test of Fire as YET's non-negotiable signature capstone. (2) Increase dedicated preparation time by a minimum of 2 days. (3) Introduce transport reimbursement for participant mobilisation. (4) Consider adding a second, smaller practical session earlier in the programme.</p></div>
+      </div>
+
+      <div class="theme" style="--tc:var(--blue)">
+        <div class="theme-head"><span class="theme-icon">🎓</span><span class="theme-title">Facilitation &amp; Knowledge Shares: Universally Valued</span><span class="badge" style="background:color-mix(in srgb,var(--blue) 15%,white);color:var(--blue)">38 mentions</span></div>
+        <p class="summary">Knowledge shares, peer mock facilitations, and the structured facilitation rubric were the most consistently valued elements across all cohorts. Alumni credited these with fundamentally transforming their professional communication, teaching ability, and self-confidence.</p>
+        <div class="detail">The facilitation rubric — providing clear, observable criteria for what excellent facilitation looks like — was cited as particularly powerful, giving alumni a shared professional language and a tool they continued to use in subsequent work. Mock facilitations provided a safe space to fail, iterate, and grow before facing real audiences.</div>
+        <div class="quotes">
+          <div class="quote">"The art of facilitation has built me professionally. I am more confident now than ever."</div>
+          <div class="quote">"The facilitation rubric and distinction between knowledge-based and practice-based lessons were very helpful."</div>
+          <div class="quote">"Mocks are what I remember most — they brought out my facilitation and collaboration skills."</div>
+        </div>
+        <div class="imp"><span class="imp-icon">💡</span><p><strong>Implication:</strong> (1) Protect knowledge shares and mocks as non-negotiable curriculum elements — never cut under scheduling pressure. (2) Formally publish and distribute the facilitation rubric as a YET Graduate Tool alumni can use in their ongoing work.</p></div>
+      </div>
+
+      <div class="theme" style="--tc:var(--gold)">
+        <div class="theme-head"><span class="theme-icon">🛡️</span><span class="theme-title">Safeguarding: High-Stakes Content, Insufficient Time</span><span class="badge" style="background:color-mix(in srgb,var(--gold) 15%,white);color:var(--gold)">8 mentions</span></div>
+        <p class="summary">Safeguarding and child protection content was recognised as essential and important, but delivered under significant time pressure — reducing comprehension of one of the most legally and ethically critical components of the programme.</p>
+        <div class="detail">YETs work directly with young people in schools and communities. Adequate understanding of safeguarding principles, mandatory reporting obligations, and child protection protocols is a professional and legal requirement. The current delivery model does not adequately reflect this importance in its allocation of time.</div>
+        <div class="quotes">
+          <div class="quote">"The safeguarding part was unclear — content was okay but we were a bit rushed."</div>
+          <div class="quote">"Safeguarding and child protection requires enough time — it's too important to rush."</div>
+          <div class="quote">"I needed more information on child protection — there was really a lot of content to absorb."</div>
+        </div>
+        <div class="imp"><span class="imp-icon">💡</span><p><strong>Implication:</strong> (1) Dedicate a protected extended session — minimum half-day, ideally a full day — that is explicitly non-compressible. (2) Introduce pre-reading materials sent before training. (3) Consider a post-training online assessment to verify understanding before alumni work with young people.</p></div>
+      </div>
+
+      <div class="theme" style="--tc:var(--green)">
+        <div class="theme-head"><span class="theme-icon">🏠</span><span class="theme-title">Non-Residential Format: The Biggest Structural Gap</span><span class="badge" style="background:color-mix(in srgb,var(--green) 15%,white);color:var(--green)">22 mentions</span></div>
+        <p class="summary">Daily commuting from home was the single most disruptive structural factor — draining participants financially and physically, reducing after-hours preparation quality, limiting peer bonding, and cutting off access to late-evening trainer support.</p>
+        <div class="detail">The impact creates a two-tier training experience where alumni from closer proximity had meaningfully better access to preparation time, peer collaboration, and trainer support than those commuting long distances. This is a fundamental equity issue that deserves strategic attention at the programme design level.</div>
+        <div class="quotes">
+          <div class="quote">"Commuting from Iganga to Jinja meant I'd arrive home too late to call trainers for support."</div>
+          <div class="quote">"I was coming from Bugiri to Jinja every day — financially draining. But I acquired so much knowledge."</div>
+          <div class="quote">"Traveling long distances every day required me to fund myself — no one knew this was coming."</div>
+        </div>
+        <div class="imp"><span class="imp-icon">💡</span><p><strong>Implication:</strong> (1) Commission a feasibility and cost analysis for a residential or hybrid-residential model. (2) As an interim measure, introduce a daily transport stipend for participants travelling more than 30km. (3) Explore partnerships with local accommodation providers near training venues.</p></div>
+      </div>
+
+      <div class="theme" style="--tc:var(--grey)">
+        <div class="theme-head"><span class="theme-icon">🔁</span><span class="theme-title">Content Repetition &amp; Unclear Activity Design</span><span class="badge" style="background:color-mix(in srgb,var(--grey) 12%,white);color:var(--grey)">8 mentions</span></div>
+        <p class="summary">A vocal minority cited repetitive knowledge share topics and poorly explained game-based activities as weaknesses that reduced engagement and created inefficiency during what is already an intensive training period.</p>
+        <div class="detail">The GROW feedback model and the Goal Setting Bingo activity were specifically cited as poorly introduced. Knowledge share repetition was noted particularly by alumni who had participated in related Educate! programmes before YET, suggesting a need for differentiated content pathways.</div>
+        <div class="quotes">
+          <div class="quote">"Repetitive knowledge shares — some content felt like we'd covered it before in a previous session."</div>
+          <div class="quote">"The goal setting Bingo game — instructions were not clear and it confused me for most of the activity."</div>
+          <div class="quote">"The GROW model of feedback was not explained clearly enough before we were asked to use it."</div>
+        </div>
+        <div class="imp"><span class="imp-icon">💡</span><p><strong>Implication:</strong> (1) Conduct a curriculum audit to identify and consolidate redundant knowledge share topics. (2) Pilot-test all game-based activities with a small group before full delivery. (3) Introduce a facilitator checklist for activities requiring prior knowledge.</p></div>
+      </div>
+    </div>
+    <div>
+      <div class="rating-box" style="margin-bottom:14px">
+        <h4>Training Content Relevance Rating</h4>
+        <div style="text-align:center;margin-bottom:12px">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#A0343425" stroke-width="13"/>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#A03434" stroke-width="13"
+              stroke-dasharray="198 238" stroke-dashoffset="60" stroke-linecap="round"/>
+            <text x="50" y="55" text-anchor="middle" fill="#A03434" font-size="20" font-weight="900" font-family="Segoe UI,Arial">83%</text>
+          </svg>
+        </div>
+        <div class="hbar-row"><span>Very Relevant</span><span style="color:var(--red);font-weight:700">83% (40)</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:83%;background:var(--red)"></div></div>
+        <div class="hbar-row" style="margin-top:8px"><span style="color:var(--greyl)">Relevant</span><span style="color:var(--greyl);font-weight:700">17% (8)</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:17%;background:var(--greyl)"></div></div>
+      </div>
+      <div class="card">
+        <h4 style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;margin-bottom:12px">Theme Index</h4>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:9px"><div style="width:8px;height:8px;border-radius:2px;background:var(--blue);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:12px">Facilitation &amp; Knowledge Shares</div><div style="color:var(--blue);font-weight:700">38</div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:9px"><div style="width:8px;height:8px;border-radius:2px;background:var(--red);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:12px">Test of Fire Capstone</div><div style="color:var(--red);font-weight:700">29</div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:9px"><div style="width:8px;height:8px;border-radius:2px;background:var(--green);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:12px">Non-Residential Structural Gap</div><div style="color:var(--green);font-weight:700">22</div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:9px"><div style="width:8px;height:8px;border-radius:2px;background:var(--gold);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:12px">Safeguarding Time Allocation</div><div style="color:var(--gold);font-weight:700">8</div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px"><div style="width:8px;height:8px;border-radius:2px;background:var(--grey);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:12px">Content Repetition &amp; Activity Design</div><div style="color:var(--grey);font-weight:700">8</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep" style="margin-top:40px"/>
+
+<!-- ─── OVERALL ─────────────────────────────────────────────────────── -->
+<section id="overall" style="--accent:var(--blue)">
+  <div class="sec-actions"><button class="dl-slide-btn" onclick="dlSection('overall','Overall Experience and Outcomes')">⬇ Download Section</button></div>
+  <div class="sec-head">
+    <h2>Overall Experience &amp; Key Outcomes</h2>
+    <p>5 insight themes identified · Synthesised from open-text responses · All quotes anonymised</p>
+  </div>
+  <div class="grid2">
+    <div>
+      <div class="theme" style="--tc:var(--blue)">
+        <div class="theme-head"><span class="theme-icon">🚀</span><span class="theme-title">Facilitation Mastery: YET's Defining Transformative Outcome</span><span class="badge" style="background:color-mix(in srgb,var(--blue) 15%,white);color:var(--blue)">38 mentions</span></div>
+        <p class="summary">The overwhelming majority of alumni — across all cohorts, locations, and backgrounds — identified facilitation skills and public speaking confidence as the single most life-changing outcome of YET. This is the programme's core value proposition and should lead all stakeholder communications.</p>
+        <div class="detail">Alumni described measurable, observable changes in their professional lives: leading school assemblies, facilitating community workshops, presenting to employers, and delivering training to peers and colleagues. The confidence built through repeated practice in a structured, supportive environment was described as durable and career-defining.</div>
+        <div class="quotes">
+          <div class="quote">"The facilitation skill I got from YET is second to none — I use it in every professional context."</div>
+          <div class="quote">"YET changed my entrepreneurial mindset and gave me confidence in mass communication."</div>
+          <div class="quote">"I became a very vibrant public speaker — something I never thought I could be."</div>
+        </div>
+        <div class="imp"><span class="imp-icon">💡</span><p><strong>Implication:</strong> (1) Formally position facilitation mastery and public speaking confidence as YET's primary advertised outcomes in all recruitment, stakeholder reporting, and external communications. (2) Document and publish alumni facilitation success stories. (3) Explore facilitation certification pathways that formally recognise this skill.</p></div>
+      </div>
+
+      <div class="theme" style="--tc:var(--red)">
+        <div class="theme-head"><span class="theme-icon">🚌</span><span class="theme-title">Transport &amp; Financial Burden: A Persistent Equity Barrier</span><span class="badge" style="background:color-mix(in srgb,var(--red) 15%,white);color:var(--red)">26 mentions</span></div>
+        <p class="summary">Daily transport cost was the most consistently cited personal hardship across all cohorts — not merely an inconvenience, but a fundamental equity and access barrier that shaped how fully participants could engage with training, preparation, and peer collaboration.</p>
+        <div class="detail">The financial strain was particularly acute for alumni from districts more than 30km from training venues. Several described arriving late, leaving early, or missing optional evening sessions due to transport constraints. The cumulative burden — potentially UGX 10,000–20,000 daily over a multi-week period — represented a significant portion of available resources.</div>
+        <div class="quotes">
+          <div class="quote">"Commuting from home became expensive. Getting daily transport was a persistent challenge."</div>
+          <div class="quote">"I was coming from Bugiri to Jinja every day — financially draining, but I pressed on."</div>
+          <div class="quote">"Some days I would wake up not knowing where I'd find transport money."</div>
+        </div>
+        <div class="imp"><span class="imp-icon">💡</span><p><strong>Implication:</strong> (1) Introduce a tiered daily transport allowance: full allowance for participants travelling more than 50km, partial for 30–50km. (2) Explore bulk transport arrangements to reduce per-participant cost. (3) Build transport support as a line item in future programme budgets.</p></div>
+      </div>
+
+      <div class="theme" style="--tc:var(--green)">
+        <div class="theme-head"><span class="theme-icon">🏡</span><span class="theme-title">Residential Training: The Single Most Requested Change</span><span class="badge" style="background:color-mix(in srgb,var(--green) 15%,white);color:var(--green)">19 mentions</span></div>
+        <p class="summary">Across all cohorts, transitioning to a residential or hybrid-residential model was the most frequently and most passionately requested structural improvement — seen not as a luxury but as a prerequisite for equitable access to the full YET experience.</p>
+        <div class="detail">Alumni described a residential model as a prerequisite for equitable access. Those with informal accommodation near training venues consistently reported a richer, more immersive experience. The current model inadvertently creates two different experiences of the same programme based on geography and financial resources.</div>
+        <div class="quotes">
+          <div class="quote">"If YET were residential, participants would have ample time to prepare and get late-night support from trainers."</div>
+          <div class="quote">"Make it both residential and non-residential so participants can choose based on their situation."</div>
+          <div class="quote">"Even if only for some sites — residential YET would transform the experience for everyone."</div>
+        </div>
+        <div class="imp"><span class="imp-icon">💡</span><p><strong>Implication:</strong> (1) Commission a detailed feasibility study and cost-benefit analysis for a residential model for at least one cohort per year. (2) Identify accommodation partnerships near existing training venues. (3) As a near-term measure, consider a hybrid model where participants opt in to subsidised shared accommodation.</p></div>
+      </div>
+
+      <div class="theme" style="--tc:var(--gold)">
+        <div class="theme-head"><span class="theme-icon">🌐</span><span class="theme-title">Professional Networks: A Durable, Underrated Outcome</span><span class="badge" style="background:color-mix(in srgb,var(--gold) 15%,white);color:var(--gold)">14 mentions</span></div>
+        <p class="summary">The professional and personal networks formed through YET were described as enduring, career-enhancing, and deeply valued — yet they largely formed organically without institutional support, structure, or alumni engagement infrastructure.</p>
+        <div class="detail">YET alumni reported continuing to collaborate with, refer work to, and draw professional support from fellow graduates years after completing training. This organic alumni network represents a significant institutional asset that is currently under-cultivated and under-leveraged by Educate!</div>
+        <div class="quotes">
+          <div class="quote">"A very big circle of friends and family that have built me into the person I am now."</div>
+          <div class="quote">"Connecting me to like-minded individuals was one of the best outcomes I didn't expect."</div>
+          <div class="quote">"The network I built — I carry it with me everywhere. I still work with people I met in YET."</div>
+        </div>
+        <div class="imp"><span class="imp-icon">💡</span><p><strong>Implication:</strong> (1) Create a structured YET Alumni Engagement Platform — a digital community of practice with regular touchpoints, mentorship matching, and shared resources. (2) Hold an annual YET Alumni Convening. (3) Establish an alumni directory accessible to all YET graduates.</p></div>
+      </div>
+
+      <div class="theme" style="--tc:var(--navy)">
+        <div class="theme-head"><span class="theme-icon">💬</span><span class="theme-title">What Alumni Want Next: Three Priority Additions</span><span class="badge" style="background:#E5EAF0;color:var(--navy)">30 mentions</span></div>
+        <p class="summary">The most frequently requested additions centred on three clear priorities: more practical facilitation experiences, structured post-training mentorship, and introductory financial literacy content — alongside strong interest in online or modular delivery options.</p>
+        <div class="detail">Demand for additional practicals reflected alumni's recognition that the Test of Fire's impact would compound with repetition. Mentorship requests reflected the desire for continuity of learning beyond the formal training period. Financial literacy was seen as the missing link between facilitation skill and sustainable livelihood impact.</div>
+        <div class="quotes">
+          <div class="quote">"Provision for online modular sessions with certification for those who can't attend physically."</div>
+          <div class="quote">"Peer Coaching and Mentorship Sessions: participants learning from each other post-YET."</div>
+          <div class="quote">"Participants need at least 2 practicals — not just one test of fire — to build real confidence."</div>
+          <div class="quote">"A youth livelihood programme: introductions to advanced financial literacy and enterprise management."</div>
+        </div>
+        <div class="imp"><span class="imp-icon">💡</span><p><strong>Implication:</strong> Three immediate strategic additions: (1) Post-training peer mentorship programme pairing current YETs with experienced alumni for 3–6 months. (2) A second, structured practical facilitation session mid-programme. (3) A 3-hour introductory financial literacy module covering budgeting, savings, and basic enterprise management.</p></div>
+      </div>
+    </div>
+    <div>
+      <div class="rating-box" style="margin-bottom:14px">
+        <h4>Overall Experience Rating</h4>
+        <div style="text-align:center;margin-bottom:12px">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#3E7FA025" stroke-width="13"/>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#3E7FA0" stroke-width="13"
+              stroke-dasharray="178 238" stroke-dashoffset="60" stroke-linecap="round"/>
+            <text x="50" y="55" text-anchor="middle" fill="#3E7FA0" font-size="20" font-weight="900" font-family="Segoe UI,Arial">75%</text>
+          </svg>
+        </div>
+        <div class="hbar-row"><span>Excellent</span><span style="color:var(--blue);font-weight:700">75% (36)</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:75%;background:var(--blue)"></div></div>
+        <div class="hbar-row" style="margin-top:8px"><span style="color:var(--greyl)">Good</span><span style="color:var(--greyl);font-weight:700">25% (12)</span></div>
+        <div class="hbar-wrap"><div class="hbar-fill" style="width:25%;background:var(--greyl)"></div></div>
+      </div>
+      <div class="card">
+        <h4 style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;margin-bottom:12px">Theme Index</h4>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:9px"><div style="width:8px;height:8px;border-radius:2px;background:var(--blue);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:12px">Facilitation Mastery</div><div style="color:var(--blue);font-weight:700">38</div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:9px"><div style="width:8px;height:8px;border-radius:2px;background:var(--red);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:12px">Transport &amp; Financial Burden</div><div style="color:var(--red);font-weight:700">26</div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:9px"><div style="width:8px;height:8px;border-radius:2px;background:var(--navy);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:12px">What Alumni Want Next</div><div style="color:var(--navy);font-weight:700">30</div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:9px"><div style="width:8px;height:8px;border-radius:2px;background:var(--green);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:12px">Residential Training Request</div><div style="color:var(--green);font-weight:700">19</div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px"><div style="width:8px;height:8px;border-radius:2px;background:var(--gold);flex-shrink:0;margin-top:4px"></div><div style="flex:1;font-size:12px">Professional Networks</div><div style="color:var(--gold);font-weight:700">14</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep" style="margin-top:40px"/>
+
+<!-- ─── RECOMMENDATIONS ────────────────────────────────────────────── -->
+<section id="recs" style="--accent:var(--red)">
+  <div class="sec-actions"><button class="dl-slide-btn" onclick="dlSection('recs','Priority Recommendations')">⬇ Download Section</button></div>
+  <div class="sec-head">
+    <h2>Priority Recommendations for Stakeholder Action</h2>
+    <p>7 actionable priorities ranked by impact and implementation ease · Owner and timeline assigned</p>
+  </div>
+  <div style="overflow-x:auto;margin-bottom:24px">
+    <table class="recs-table">
+      <thead>
+        <tr>
+          <th>#</th><th>Focus Area</th><th>Recommended Action</th><th>Impact</th><th>Effort</th><th>Owner</th><th>Timeline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="p-num" style="color:var(--red)">1</span></td>
+          <td><span class="badge" style="background:color-mix(in srgb,var(--red) 14%,white);color:var(--red)">Transport &amp; Residential</span></td>
+          <td>Introduce daily transport stipend for participants &gt;30km; commission residential pilot feasibility study for ≥1 cohort/year</td>
+          <td><span class="badge" style="background:#3A7A5220;color:var(--green)">High</span></td>
+          <td><span class="badge" style="background:#A0343420;color:var(--red)">High</span></td>
+          <td style="color:var(--muted);white-space:nowrap">Operations &amp; Finance</td>
+          <td style="color:var(--muted);white-space:nowrap">6–12 months</td>
+        </tr>
+        <tr>
+          <td><span class="p-num" style="color:var(--green)">2</span></td>
+          <td><span class="badge" style="background:color-mix(in srgb,var(--green) 14%,white);color:var(--green)">Recruitment Comms</span></td>
+          <td>Develop and standardise pre-training information pack: retention criteria, post-YET pathways, logistics, financial requirements, and timeline</td>
+          <td><span class="badge" style="background:#3A7A5220;color:var(--green)">High</span></td>
+          <td><span class="badge" style="background:#3A7A5220;color:var(--green)">Low</span></td>
+          <td style="color:var(--muted);white-space:nowrap">Recruitment Team</td>
+          <td style="color:var(--muted);white-space:nowrap">Immediate</td>
+        </tr>
+        <tr>
+          <td><span class="p-num" style="color:var(--red)">3</span></td>
+          <td><span class="badge" style="background:color-mix(in srgb,var(--red) 14%,white);color:var(--red)">Safeguarding</span></td>
+          <td>Dedicate protected extended session (min half-day, ideally full day) for safeguarding — schedule as non-compressible; add pre-reading and post-assessment</td>
+          <td><span class="badge" style="background:#3A7A5220;color:var(--green)">High</span></td>
+          <td><span class="badge" style="background:#3A7A5220;color:var(--green)">Low</span></td>
+          <td style="color:var(--muted);white-space:nowrap">Training Design</td>
+          <td style="color:var(--muted);white-space:nowrap">Next cohort</td>
+        </tr>
+        <tr>
+          <td><span class="p-num" style="color:var(--green)">4</span></td>
+          <td><span class="badge" style="background:color-mix(in srgb,var(--green) 14%,white);color:var(--green)">Post-Training Support</span></td>
+          <td>Launch structured alumni mentorship programme pairing current YETs with experienced graduates; build Alumni Engagement Platform</td>
+          <td><span class="badge" style="background:#3A7A5220;color:var(--green)">High</span></td>
+          <td><span class="badge" style="background:#C8880A20;color:var(--gold)">Medium</span></td>
+          <td style="color:var(--muted);white-space:nowrap">Alumni Relations</td>
+          <td style="color:var(--muted);white-space:nowrap">3–6 months</td>
+        </tr>
+        <tr>
+          <td><span class="p-num" style="color:var(--blue)">5</span></td>
+          <td><span class="badge" style="background:color-mix(in srgb,var(--blue) 14%,white);color:var(--blue)">Interview Process</span></td>
+          <td>Mandate minimum 14-day gap between selection and training start; pilot hybrid virtual interview model for candidates &gt;40km from venue</td>
+          <td><span class="badge" style="background:#C8880A20;color:var(--gold)">Medium</span></td>
+          <td><span class="badge" style="background:#C8880A20;color:var(--gold)">Medium</span></td>
+          <td style="color:var(--muted);white-space:nowrap">HR / Programs</td>
+          <td style="color:var(--muted);white-space:nowrap">Next cohort</td>
+        </tr>
+        <tr>
+          <td><span class="p-num" style="color:var(--blue)">6</span></td>
+          <td><span class="badge" style="background:color-mix(in srgb,var(--blue) 14%,white);color:var(--blue)">Curriculum Quality</span></td>
+          <td>Audit knowledge shares for redundancy; add 2nd mid-programme practical session; introduce 3-hour introductory financial literacy module</td>
+          <td><span class="badge" style="background:#C8880A20;color:var(--gold)">Medium</span></td>
+          <td><span class="badge" style="background:#C8880A20;color:var(--gold)">Medium</span></td>
+          <td style="color:var(--muted);white-space:nowrap">Curriculum Team</td>
+          <td style="color:var(--muted);white-space:nowrap">3–6 months</td>
+        </tr>
+        <tr>
+          <td><span class="p-num" style="color:var(--gold)">7</span></td>
+          <td><span class="badge" style="background:color-mix(in srgb,var(--gold) 14%,white);color:var(--gold)">Candidate Dignity</span></td>
+          <td>Create compassionate rejection communication template with constructive feedback and 5-day notification commitment for all unsuccessful applicants</td>
+          <td><span class="badge" style="background:#C8880A20;color:var(--gold)">Medium</span></td>
+          <td><span class="badge" style="background:#3A7A5220;color:var(--green)">Low</span></td>
+          <td style="color:var(--muted);white-space:nowrap">Recruitment Team</td>
+          <td style="color:var(--muted);white-space:nowrap">Immediate</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid3">
+    <div style="background:color-mix(in srgb,var(--green) 8%,white);border:1px solid color-mix(in srgb,var(--green) 22%,white);border-radius:10px;padding:16px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="font-size:18px">⚡</span><span style="color:var(--green);font-weight:700;font-size:14px">Quick Wins — Act Now</span></div>
+      <p style="color:var(--muted);font-size:13px;line-height:1.65">Recruitment information pack · Extended safeguarding session · Compassionate rejection communication template. These require minimal resources but deliver significant impact on alumni experience and programme reputation.</p>
+    </div>
+    <div style="background:color-mix(in srgb,var(--gold) 8%,white);border:1px solid color-mix(in srgb,var(--gold) 22%,white);border-radius:10px;padding:16px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="font-size:18px">📅</span><span style="color:var(--gold);font-weight:700;font-size:14px">Medium-Term — 3–6 Months</span></div>
+      <p style="color:var(--muted);font-size:13px;line-height:1.65">Interview timeline extension · Alumni engagement platform · Peer mentorship programme · Curriculum audit and redundancy removal. Require coordination and moderate resourcing but are well within existing capacity.</p>
+    </div>
+    <div style="background:color-mix(in srgb,var(--red) 6%,white);border:1px solid color-mix(in srgb,var(--red) 18%,white);border-radius:10px;padding:16px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="font-size:18px">🏗️</span><span style="color:var(--red);font-weight:700;font-size:14px">Strategic Investments — 6–12 Months</span></div>
+      <p style="color:var(--muted);font-size:13px;line-height:1.65">Residential YET pilot · Transport stipend scheme · Hybrid interview infrastructure. These require significant planning, budget allocation, and stakeholder alignment — but represent the highest-impact structural changes available.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CLOSING ────────────────────────────────────────────────────── -->
+<div id="closing">
+  <div class="closing-inner">
+    <div>
+      <div style="display:inline-block;background:linear-gradient(135deg,var(--blue),var(--red));border-radius:8px;padding:4px 14px;margin-bottom:14px">
+        <span style="color:#fff;font-weight:800;font-size:12px;letter-spacing:.1em">YET · EDUCATE!</span>
+      </div>
+      <h2 style="color:#fff;font-size:28px;font-weight:900;margin-bottom:10px;line-height:1.2">Thank You</h2>
+      <p style="color:var(--greyl);font-size:14px;line-height:1.8;margin-bottom:18px">This report represents the voices of 48 YET alumni across 5 cohorts. Their candour, detail, and commitment to improving YET for future participants reflects the spirit the programme aims to cultivate. We are grateful for their time and trust.</p>
+      <div style="background:rgba(58,122,82,.2);border:1px solid rgba(58,122,82,.45);border-radius:10px;padding:16px 20px;margin-bottom:18px">
+        <div style="color:#4E9E6A;font-weight:800;font-size:16px;margin-bottom:5px">100% of Alumni: Training Adequately Prepared Them</div>
+        <p style="color:var(--greyl);font-size:13px;line-height:1.6">The foundation is strong. The opportunity is to make YET equitable, accessible, and even more transformational for every participant — regardless of geography or economic background.</p>
+      </div>
+      <p style="color:var(--greyl);font-size:12px">Educate! · YET Alumni Feedback Survey · February 2026 · n=48 · Confidential</p>
+    </div>
+    <div>
+      <p style="color:var(--greyl);font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:14px">Suggested Next Steps for Leadership</p>
+      <div class="step"><div class="step-num" style="background:var(--blue)">1</div><p>Share this report with programme leadership and key donors as a primary evidence document for the next strategic planning cycle</p></div>
+      <div class="step"><div class="step-num" style="background:var(--gold)">2</div><p>Present recommendations to the YET Programme Review Committee — prioritise items 2, 3, and 7 for immediate implementation</p></div>
+      <div class="step"><div class="step-num" style="background:var(--red)">3</div><p>Commission transport stipend feasibility study and residential model cost-benefit analysis (Q1 2026)</p></div>
+      <div class="step"><div class="step-num" style="background:var(--green)">4</div><p>Draft and distribute the pre-training information pack before the next cohort recruitment cycle opens</p></div>
+      <div class="step"><div class="step-num" style="background:var(--blue)">5</div><p>Initiate alumni engagement platform design and begin mentorship matching framework development</p></div>
+      <div class="step"><div class="step-num" style="background:var(--gold)">6</div><p>Schedule curriculum audit and safeguarding session redesign with the Training Design team this quarter</p></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── NAV ACTIVE STATE ─────────────────────────────────────────────────
+const sections=['cover','exec','profile','scorecard','recruitment','interview','postinterview','training','overall','recs','closing'];
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+      const link=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if(link)link.classList.add('active');
+    }
+  });
+},{threshold:.3});
+sections.forEach(id=>{const el=document.getElementById(id);if(el)obs.observe(el);});
+
+// ── DOWNLOAD HELPERS ─────────────────────────────────────────────────
+function dlHTML(html,filename){
+  const b=new Blob([html],{type:'text/html'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(b);
+  a.download=filename;
+  document.body.appendChild(a);a.click();
+  document.body.removeChild(a);URL.revokeObjectURL(a.href);
+}
+
+function getNavHTML(){
+  return `<style>body{font-family:'Segoe UI',Arial,sans-serif;margin:0;padding:0;background:#F4F7FA;color:#0D1E35}
+  :root{--navy:#0D1E35;--red:#A03434;--blue:#3E7FA0;--gold:#C8880A;--green:#3A7A52;--grey:#64748B;--muted:#64748B;--greyl:#94A3B8;--border:#E0E8F0;--bg:#F4F7FA;--surface:#fff;--text:#0D1E35}
+  .hbar-wrap{background:#E5EAF0;border-radius:99px;height:8px;overflow:hidden;margin-top:3px}
+  .hbar-fill{height:100%;border-radius:99px}
+  .card{background:#fff;border:1px solid #E0E8F0;border-radius:12px;padding:20px;margin-bottom:14px}
+  .badge{display:inline-block;font-size:11px;font-weight:700;border-radius:99px;padding:2px 10px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{background:#0D1E35;color:#94A3B8;padding:10px 12px;text-align:left;font-size:11px;font-weight:600}
+  td{padding:10px 12px;border-bottom:1px solid #E0E8F0;vertical-align:middle}
+  tr:nth-child(even) td{background:#F8FAFC}
+  </style>`;
+}
+
+function dlSection(id,title){
+  const el=document.getElementById(id);
+  const clone=el.cloneNode(true);
+  // remove dl button
+  const btn=clone.querySelector('.sec-actions');
+  if(btn)btn.remove();
+  const html=`<!DOCTYPE html><html><head><meta charset="UTF-8"/><title>YET – ${title}</title>${getNavHTML()}</head><body style="max-width:1100px;margin:0 auto;padding:32px 24px">${clone.outerHTML}</body></html>`;
+  dlHTML(html,`YET_${title.replace(/\s+/g,'_')}.html`);
+}
+
+function dlAll(){
+  const body=document.body.cloneNode(true);
+  // remove nav and all dl buttons
+  const nav=body.querySelector('nav');if(nav)nav.remove();
+  body.querySelectorAll('.sec-actions').forEach(b=>b.remove());
+  body.querySelectorAll('.dl-all').forEach(b=>b.remove());
+  const html=`<!DOCTYPE html><html><head><meta charset="UTF-8"/><title>YET Alumni Experience Report – February 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  ${getNavHTML()}
+  <style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#F4F7FA;color:#0D1E35;font-size:14px;line-height:1.6}
+  :root{--navy:#0D1E35;--navy2:#162840;--navy3:#1E3554;--red:#A03434;--redl:#C04444;--blue:#3E7FA0;--bluel:#5CA0C4;--gold:#C8880A;--goldl:#E0A020;--green:#3A7A52;--greenl:#4E9E6A;--grey:#64748B;--greyl:#94A3B8;--bg:#F4F7FA;--surface:#fff;--border:#E0E8F0;--text:#0D1E35;--muted:#64748B}
+  section{max-width:1100px;margin:0 auto;padding:40px 28px 0}
+  section:last-of-type{padding-bottom:60px}
+  hr{border:none;border-top:2px solid #E0E8F0;margin:0 28px}
+  .sec-head{border-left:4px solid var(--accent,var(--red));padding-left:14px;margin-bottom:24px}
+  .sec-head h2{font-size:22px;font-weight:800;color:#0D1E35;margin-bottom:3px}
+  .sec-head p{color:#64748B;font-size:13px}
+  #cover{max-width:100%;padding:0;background:linear-gradient(135deg,#0D1E35 0%,#162840 55%,#1E3554 100%);position:relative;overflow:hidden;min-height:320px;display:flex;align-items:center;justify-content:center;text-align:center}
+  .cover-inner{padding:48px 32px;position:relative;z-index:1}
+  .cover-badge{display:inline-block;background:linear-gradient(135deg,#3E7FA0,#A03434);border-radius:10px;padding:5px 18px;margin-bottom:16px;color:#fff;font-weight:800;font-size:12px;letter-spacing:.12em}
+  .cover-inner h1{color:#fff;font-size:36px;font-weight:900;margin-bottom:8px;line-height:1.15}
+  .cover-inner h2{color:#5CA0C4;font-size:20px;font-weight:500;margin-bottom:8px}
+  .sub{color:#94A3B8;font-size:13px;margin-bottom:5px}
+  .cover-kpis{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:24px}
+  .cover-kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 18px;min-width:100px;text-align:center}
+  .cover-kpi .val{font-size:26px;font-weight:900;line-height:1}
+  .cover-kpi .lbl{color:#94A3B8;font-size:10px;margin-top:4px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  .exec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .exec-item{border-left:3px solid var(--c);background:rgba(255,255,255,1);border-radius:8px;padding:12px 14px}
+  .exec-item .ei-title{font-weight:700;font-size:13px;color:#0D1E35;margin-bottom:4px;display:flex;align-items:center;gap:7px}
+  .exec-item p{color:#64748B;font-size:12px;line-height:1.65}
+  .card{background:#fff;border:1px solid #E0E8F0;border-radius:12px;padding:20px}
+  .stat{background:#fff;border:1px solid #E0E8F0;border-radius:10px;padding:16px;text-align:center}
+  .score-card{background:#fff;border:1px solid #E0E8F0;border-radius:12px;padding:18px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+  .score-card .cat{font-weight:700;font-size:12px;color:#0D1E35;line-height:1.3}
+  .score-card .resp{color:#64748B;font-size:11px}
+  .hbar-row{display:flex;justify-content:space-between;font-size:11px;margin-top:6px}
+  .theme{border:1px solid #E0E8F0;border-left:4px solid var(--tc);border-radius:10px;background:#fff;padding:18px;margin-bottom:14px}
+  .theme-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+  .theme-icon{font-size:22px}
+  .theme-title{font-weight:700;font-size:15px;color:#0D1E35;flex:1}
+  .summary{color:#64748B;font-size:13px;line-height:1.7;margin-bottom:8px}
+  .detail{color:#64748B;font-size:12px;line-height:1.7;margin-bottom:10px;padding:10px 12px;background:#F8FAFC;border-radius:7px;border:1px solid #E0E8F0}
+  .quotes{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+  .quote{background:#F8FAFC;border:1px solid #E0E8F0;border-left:3px solid var(--tc);border-radius:0 6px 6px 0;padding:8px 12px;font-style:italic;font-size:12px;color:#0D1E35;line-height:1.6}
+  .imp{background:#F8FAFC;border-radius:8px;padding:10px 13px;display:flex;gap:8px;align-items:flex-start}
+  .imp-icon{font-size:15px;flex-shrink:0}
+  .imp p{font-size:12px;line-height:1.6;margin:0}
+  .rating-box{background:#F8FAFC;border:1px solid #E0E8F0;border-radius:10px;padding:16px;margin-bottom:14px}
+  .rating-box h4{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#64748B;margin-bottom:12px;font-weight:600}
+  .recs-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px}
+  .recs-table th{background:#0D1E35;color:#94A3B8;padding:10px 12px;text-align:left;font-size:11px;font-weight:600;white-space:nowrap}
+  .recs-table td{padding:10px 12px;border-bottom:1px solid #E0E8F0;vertical-align:middle}
+  .recs-table tr:nth-child(even) td{background:#F8FAFC}
+  .p-num{font-weight:900;font-size:20px;line-height:1}
+  .callout{border-radius:12px;padding:18px 22px;display:flex;align-items:center;gap:16px;margin-top:20px}
+  .callout.dark{background:#0D1E35;color:#fff}
+  .callout.dark p{color:#94A3B8}
+  .callout h3{font-size:16px;font-weight:800;margin-bottom:4px}
+  #closing{max-width:100%;background:linear-gradient(135deg,#0D1E35,#162840);color:#fff}
+  .closing-inner{max-width:1100px;margin:0 auto;padding:48px 28px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+  .step{display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 14px;margin-bottom:8px}
+  .step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#fff;flex-shrink:0}
+  .step p{color:#fff;font-size:13px;line-height:1.5}
+  </style></head><body>${body.innerHTML}</body></html>`;
+  dlHTML(html,'YET_Alumni_Full_Report_February_2026.html');
+}
+</script>
+</body>
+</html>
